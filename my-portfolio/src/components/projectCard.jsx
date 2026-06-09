@@ -1,21 +1,25 @@
+import "../styles/projects.css";
+
 export default function ProjectCard({ project }) {
   return (
-    <div className="project-card">
-      <img src={project.image} alt={project.name} />
+    <a href={project.link} target="_blank" rel="noopener noreferrer">
+      <div className="project-card">
+        <img src={project.image} alt={project.name} />
 
-      <h3>{project.name}</h3>
+        <div className="project-card-content">
+          {project.featured && <span className="featured">Featured</span>}
+        </div>
 
-      <p>{project.description}</p>
+        <h3>{project.name}</h3>
 
-      {project.featured && <span>Featured</span>}
+        <p>{project.description}</p>
 
-      <div>
-        {project.techStack.map((tech) => (
-          <span key={tech}>{tech}</span>
-        ))}
+        <div className="tech-stack">
+          {project.techStack.map((tech) => (
+            <span key={tech}>{tech}</span>
+          ))}
+        </div>
       </div>
-
-      <a href={project.link}>View Project</a>
-    </div>
+    </a>
   );
 }

@@ -1,6 +1,7 @@
-import ProjectCard from "./ProjectCard";
-import invoiceImg from '../assets/Invoice Flow.PNG'
-import climateImg from '../assets/Climate Guide.PNG'
+import ProjectCard from "./projectCard";
+import invoiceImg from "../assets/Invoice Flow.PNG";
+import climateImg from "../assets/Climate Guide.PNG";
+import '../styles/projects.css'
 
 const projects = [
   {
@@ -25,7 +26,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section>
+    <section className="projects-section" id="projects">
       <h2>Projects</h2>
 
       {projects.map((project) => (
