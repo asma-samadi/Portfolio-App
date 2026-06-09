@@ -1,32 +1,32 @@
-import { FaInstagram } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
+import "../styles/about.css";
 
 export default function About() {
   return (
-    <section>
-      <h2>About Me</h2>
-
+    <section className="section-about">
       <p>
-        I’m Asma Samadi, an aspiring Frontend Developer focused on building
-        clean, responsive, and user-friendly web applications.
+        I’m an aspiring Frontend Developer focused on building responsive,
+        accessible, and user-centered web applications. I enjoy turning ideas
+        into clean and functional digital experiences using modern web
+        technologies such as HTML, CSS, JavaScript, and React. My goal is to
+        create interfaces that are not only visually appealing but also
+        intuitive and efficient for users.
+        <br />
+        <br />
+        I am currently dedicating my time to strengthening my frontend
+        development skills through consistent practice and project-based
+        learning. I focus on understanding core programming concepts, improving
+        my problem-solving abilities, and writing clean, maintainable code. I am
+        especially interested in React development and building reusable
+        components that improve scalability and structure in web applications.
+        <br />
+        <br />
+        Beyond coding, I enjoy exploring modern UI design trends and learning
+        how thoughtful design decisions impact user experience. I aim to bridge
+        the gap between design and development by creating websites that are
+        simple, fast, and accessible. I am committed to continuous learning and
+        growing into a professional developer who builds meaningful and
+        impactful digital products.
       </p>
-
-      <p>
-        I enjoy working with HTML, CSS, JavaScript, and React. I like turning
-        ideas into simple and functional websites that people can use easily.
-      </p>
-
-      <p>
-        Currently, I’m learning modern web development and building projects to
-        improve my skills and become a professional developer in the future.
-      </p>
-
-      <div>
-        <FaInstagram />
-        <FaGithub />
-        <FaLinkedin />
-      </div>
     </section>
   );
 }

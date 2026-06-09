@@ -4,18 +4,23 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Footer from './components/Footer'
+import Footer from "./components/Footer";
+import "./index.css";
 
 function App() {
   return (
-    <div>
-      <Hero />
-      <Navbar />
-      <About />
-      <Projects />
-      <Skills />
-      <Contact />
-      <Footer />
+    <div className="layout">
+      <div className="left">
+        <Hero />
+        <Navbar />
+      </div>
+      <div className="right">
+        <About />
+        <Projects />
+        <Skills />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 }
