@@ -1,7 +1,7 @@
 .projects-section {
-  padding: 4rem 0;
   margin-left: 50px;
-  height: 100vh;
+  padding-top: 5px;
+  padding-bottom: 100px;
 }
 
 a {
@@ -10,7 +10,6 @@ a {
 
 .projects-section h2 {
   margin-bottom: 4rem;
-  margin-top: 80px;
 }
 
 .project-card {
@@ -98,4 +97,24 @@ a {
   font-weight: 600;
   margin-bottom: 10px;
   display: inline-block;
+}
+
+@media (max-width:768px) {
+  .projects-section {
+  margin-left: 0px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.project-card {
+  position: relative;
+  display: block;
+  align-items: flex-start;
+  margin-bottom: 4rem;
+  border-radius: 12px;
+}
+
+.project-card img {
+  width: 40%;
+}
 }

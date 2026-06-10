@@ -1,6 +1,7 @@
 .skills-section {
   margin-left: 50px;
-  padding: 2rem 0;
+  padding-top: 5px;
+  padding-bottom: 100px;
 }
 
 .skills-section h2 {
@@ -44,4 +45,12 @@
 .skill-badge:hover {
   background: rgba(100, 255, 218, 0.2);
   transform: translateY(-2px);
+}
+
+@media (max-width:768px) {
+  .skills-section {
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-bottom: 4px;
+}
 }

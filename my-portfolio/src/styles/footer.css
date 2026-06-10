@@ -1,0 +1,38 @@
+footer {
+    font-weight: 400;
+    color: rgb(100, 116, 139);
+    font-size: 15px;
+    line-height: 20px;
+    margin-left: 50px;
+    margin-top: 60px;
+}
+
+footer span {
+    font-weight: 500;
+    color: rgb(148, 163, 184);
+    font-size: 16px;
+    line-height: 20px;
+}
+
+footer span:hover {
+    color:rgb(94, 234, 212) ;
+}
+
+footer span a {
+    font-weight: 500;
+    color: rgb(148, 163, 184);
+    font-size: 16px;
+    line-height: 20px;
+}
+
+footer span a:hover {
+    color:rgb(94, 234, 212);
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    footer {
+    margin-left: 0px;
+}
+}

@@ -2,7 +2,8 @@ import "../styles/about.css";
 
 export default function About() {
   return (
-    <section className="section-about">
+    <section className="section-about" id="about">
+      <h2>ABOUT</h2>
       <p>
         I’m an aspiring Frontend Developer focused on building responsive,
         accessible, and user-centered web applications. I enjoy turning ideas
