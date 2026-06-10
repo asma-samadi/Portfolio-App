@@ -8,7 +8,6 @@ export default function ProjectCard({ project }) {
 
         <div className="project-card-content">
           {project.featured && <span className="featured">Featured</span>}
-        </div>
 
         <h3>{project.name}</h3>
 
@@ -18,7 +17,8 @@ export default function ProjectCard({ project }) {
           {project.techStack.map((tech) => (
             <span key={tech}>{tech}</span>
           ))}
-        </div>
+       </div>
+      </div>
       </div>
     </a>
   );

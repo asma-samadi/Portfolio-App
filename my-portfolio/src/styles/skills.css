@@ -1,0 +1,47 @@
+.skills-section {
+  margin-left: 50px;
+  padding: 2rem 0;
+}
+
+.skills-section h2 {
+  margin-bottom: 2rem;
+}
+
+.skills-intro {
+  color: rgb(148, 163, 184);
+  line-height: 1.8;
+  max-width: 650px;
+  margin-bottom: 3rem;
+}
+
+.skill-group {
+  margin-bottom: 2rem;
+}
+
+.skill-group h3 {
+  color: rgb(226, 232, 240);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-badge {
+  background: rgba(100, 255, 218, 0.1);
+  color: #64ffda;
+
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.skill-badge:hover {
+  background: rgba(100, 255, 218, 0.2);
+  transform: translateY(-2px);
+}
