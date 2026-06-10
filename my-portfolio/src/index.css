@@ -132,3 +132,34 @@ html {
   font-size: 14px;
   z-index: 1000;
 }
+
+/* Background effect */
+.dark,
+.light {
+  position: relative;
+}
+
+.dark::before,
+.light::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dark::before {
+  background: radial-gradient(
+    800px circle at var(--x) var(--y),
+     rgba(100, 255, 218, 0.12),
+    transparent 40%
+  );
+}
+
+.light::before {
+  background: radial-gradient(
+    600px circle at var(--x) var(--y),
+    rgba(15, 118, 110, 0.08),
+    transparent 40%
+  );
+}
