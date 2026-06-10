@@ -8,8 +8,7 @@ export default function Hero() {
         Frontend Developer | React Learner
         <span>
           <br />
-          <br />
-        I build small web projects while learning JavaScript and React.
+          <br />I build small web projects while learning JavaScript and React.
         </span>
       </p>
     </section>

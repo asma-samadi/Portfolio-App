@@ -13,7 +13,7 @@
   align-items: center;
   gap: 15px;
   text-decoration: none;
-  color: #94a3b8;
+  color: var(--secondary-text);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 2px;
@@ -24,17 +24,17 @@
   content: "";
   width: 30px;
   height: 1px;
-  background: #94a3b8;
+  background: var(--secondary-text);
   transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #e2e8f0;
+  color: var(--primary-text);
 }
 
 .nav-links a:hover::before {
   width: 60px;
-  background: #e2e8f0;
+  background: var(--primary-text);
 }
 
 .nav-icons {
@@ -44,13 +44,13 @@
 }
 
 .nav-icons a {
-  color: #94a3b8;
+  color: var(--secondary-text);
   font-size: 30px;
   transition: 0.3s;
 }
 
 .nav-icons a:hover {
-  color: #64ffda;
+  color: var(--accent);
   transform: translateY(-3px);
 }
 

@@ -1,38 +1,37 @@
 footer {
-    font-weight: 400;
-    color: rgb(100, 116, 139);
-    font-size: 15px;
-    line-height: 20px;
-    margin-left: 50px;
-    margin-top: 60px;
+  font-weight: 400;
+  color: var(--muted-text);
+  font-size: 15px;
+  line-height: 20px;
+  margin-left: 50px;
+  margin-top: 60px;
 }
 
 footer span {
-    font-weight: 500;
-    color: rgb(148, 163, 184);
-    font-size: 16px;
-    line-height: 20px;
+  font-weight: 500;
+  color: var(secondary-text);
+  font-size: 16px;
+  line-height: 20px;
 }
 
 footer span:hover {
-    color:rgb(94, 234, 212) ;
+  color: var(--accent-hover);
 }
 
 footer span a {
-    font-weight: 500;
-    color: rgb(148, 163, 184);
-    font-size: 16px;
-    line-height: 20px;
+  font-weight: 500;
+  color: var(--secondary-text);
+  font-size: 16px;
+  line-height: 20px;
 }
 
 footer span a:hover {
-    color:rgb(94, 234, 212);
-    cursor: pointer;
+  color: var(--accent-hover);
+  cursor: pointer;
 }
-
 
 @media (max-width: 768px) {
-    footer {
+  footer {
     margin-left: 0px;
-}
+  }
 }

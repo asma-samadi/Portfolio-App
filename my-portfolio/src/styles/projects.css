@@ -29,7 +29,7 @@ a {
   bottom: -16px;
   left: -26px;
   border-radius: 12px;
-  background: rgba(30, 41, 59, 0.4);
+  background: var(--card-bg);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: -1;
@@ -52,17 +52,17 @@ a {
 }
 
 .project-card h3 {
-  color: rgb(226, 232, 240);
+  color: var(--primary-text);
   font-size: 1.1rem;
   margin-bottom: 0.8rem;
 }
 
 .project-card:hover h3 {
-  color: #64ffda;
+  color: var(--accent);
 }
 
 .project-card p {
-  color: rgb(148, 163, 184);
+  color: var(--secondary-text);
   line-height: 1.7;
   margin-bottom: 1rem;
 }
@@ -75,46 +75,46 @@ a {
 }
 
 .tech-stack span {
-  background: rgba(100, 255, 218, 0.1);
-  color: #64ffda;
+  background: var(--badge-bg);
+  color: var(--accent);
   padding: 6px 12px;
   border-radius: 999px;
   font-size: 13px;
 }
 
 .project-card a {
-  color: #ccd6f6;
+  color: var(--link-text);
   font-size: 14px;
 }
 
 .project-card a:hover {
-  color: #64ffda;
+  color: var(--accent);
 }
 
 .featured {
-  color: #64ffda;
+  color: var(--accent);
   font-size: 12px;
   font-weight: 600;
   margin-bottom: 10px;
   display: inline-block;
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .projects-section {
-  margin-left: 0px;
-  padding-top: 70px;
-  padding-bottom: 70px;
-}
+    margin-left: 0px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
 
-.project-card {
-  position: relative;
-  display: block;
-  align-items: flex-start;
-  margin-bottom: 4rem;
-  border-radius: 12px;
-}
+  .project-card {
+    position: relative;
+    display: block;
+    align-items: flex-start;
+    margin-bottom: 4rem;
+    border-radius: 12px;
+  }
 
-.project-card img {
-  width: 40%;
-}
+  .project-card img {
+    width: 40%;
+  }
 }

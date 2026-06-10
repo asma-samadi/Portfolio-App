@@ -1,7 +1,51 @@
+:root {
+  --bg-color: #0f172a;
+  --primary-text: rgb(226, 232, 240);
+  --secondary-text: rgb(148, 163, 184);
+  --muted-text: rgb(100, 116, 139);
+
+  --accent: #64ffda;
+  --accent-hover: rgb(94, 234, 212);
+
+  --card-bg: rgba(30, 41, 59, 0.4);
+  --input-bg: rgba(30, 41, 59, 0.5);
+  --badge-bg: rgba(100, 255, 218, 0.1);
+  --badge-hover-bg: rgba(100, 255, 218, 0.2);
+
+  --link-text: #ccd6f6;
+}
+
+.light {
+  --bg-color: #ffffff;
+  --primary-text: #1e293b;
+  --secondary-text: #475569;
+  --muted-text: #64748b;
+
+  --accent: #0f766e;
+  --accent-hover: #115e59;
+
+  --card-bg: rgba(226, 232, 240, 0.7);
+  --input-bg: rgba(226, 232, 240, 0.8);
+  --badge-bg: rgba(15, 118, 110, 0.1);
+  --badge-hover-bg: rgba(15, 118, 110, 0.2);
+
+  --link-text: #334155;
+}
+
+.dark {
+  --bg-color: #0f172a;
+}
+
 body {
-  background: #0f172a;
-  color: #e2e8f0;
   box-sizing: border-box;
+  margin: 0;
+}
+
+.dark,
+.light {
+  background: var(--bg-color);
+  color: var(--primary-text);
+  min-height: 100vh;
 }
 
 html {
@@ -67,10 +111,24 @@ html {
     width: 100%;
     padding-top: 30px;
   }
-  
+
   .right {
     width: 100%;
     padding-top: 0px;
     margin-top: 60px;
   }
+}
+
+/* Dark theme and light theme */
+
+.theme-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  z-index: 1000;
 }

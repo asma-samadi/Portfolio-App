@@ -9,7 +9,7 @@
 
 .contact-text {
   max-width: 650px;
-  color: rgb(148, 163, 184);
+  color: var(--secondary-text);
   line-height: 1.8;
   margin-bottom: 3rem;
 }
@@ -23,38 +23,38 @@
 
 .contact-form input,
 .contact-form textarea {
-  background: rgba(30, 41, 59, 0.5);
+  background: var(--input-bg);
   border: 1px solid transparent;
   border-radius: 8px;
   padding: 14px;
-  color: rgb(226, 232, 240);
+  color: var(primary-text);
   transition: 0.3s;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: #64ffda;
+  border-color: var(--accent);
 }
 
 .contact-form button {
   width: fit-content;
   padding: 12px 24px;
-  border: 1px solid #64ffda;
+  border: 1px solid var(--accent);
   border-radius: 8px;
-  color: #64ffda;
+  color: var(--accent);
   background: transparent;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .contact-form button:hover {
-  background: rgba(100, 255, 218, 0.1);
+  background: var(--badge-bg);
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .contact-section {
-  margin-left: 0px;
-  padding-top: 80px;
-}
+    margin-left: 0px;
+    padding-top: 80px;
+  }
 }
