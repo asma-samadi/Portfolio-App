@@ -27,7 +27,7 @@
   border: 1px solid transparent;
   border-radius: 8px;
   padding: 14px;
-  color: var(primary-text);
+  color: var(--primary-text);
   transition: 0.3s;
 }
 
