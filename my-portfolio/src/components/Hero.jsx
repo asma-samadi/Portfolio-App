@@ -1,12 +1,9 @@
 import "../styles/hero.css";
 import { Typewriter } from "react-simple-typewriter";
-import Header from './Header'
 
 export default function Hero() {
   return (
     <section className="hero" id="hero">
-      <Header message='Welcome to My Profile' />
-
       <h1>Asma Samadi</h1>
       <div className="intro-line">
   <p>I'm</p>

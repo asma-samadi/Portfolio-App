@@ -315,6 +315,145 @@ html {
     0 0 20px var(--accent);
 }
 
+.loading-screen {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  background: var(--bg);
+  z-index: 9999;
+}
+
+.loading-screen h1::after {
+  content: "";
+  display: inline-block;
+  animation: dots 1.2s steps(3, end) infinite;
+}
+
+/* Glow animation */
+@keyframes loadingGlow {
+  from {
+    opacity: 0.6;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+/* Dots animation (...) */
+@keyframes dots {
+  0% {
+    content: "";
+  }
+  33% {
+    content: ".";
+  }
+  66% {
+    content: "..";
+  }
+  100% {
+    content: "...";
+  }
+}
+
+/* Loading text */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(10, 15, 25, 0.9);
+  backdrop-filter: blur(12px);
+
+  z-index: 9999;
+
+  animation: fadeIn 0.4s ease;
+}
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--bg);
+  z-index: 9999;
+
+  transition: opacity 0.6s ease;
+}
+
+/* Fade out */
+.fade-out {
+  opacity: 0;
+}
+
+/* Dot loader container */
+.loader-inner {
+  display: flex;
+  gap: 8px;
+}
+
+/* Dots */
+.loader-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+
+  animation: bounce 0.6s infinite alternate;
+}
+
+/* Delay for wave effect */
+.loader-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loader-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Loading text */
+.loader-text {
+  margin-top: 18px;
+
+  font-size: 1rem;
+  letter-spacing: 6px;
+  font-weight: 500;
+
+  color: var(--accent);
+
+  text-transform: uppercase;
+
+  opacity: 0.8;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  to {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+
 @media (max-width: 1300px) {
   .layout {
     max-width: 1000px;

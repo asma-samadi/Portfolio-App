@@ -14,9 +14,25 @@ import { useState, useEffect, useRef } from "react";
 import { FaArrowUp } from "react-icons/fa";
 import ScrollReveal from "scrollreveal";
 
+
 const VALID_THEMES = ["dark", "light", "forest"];
 
 function App() {
+  const [showLoader, setShowLoader] = useState(true);
+  const [fadeOut, setFadeOut] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setFadeOut(true);
+
+      setTimeout(() => {
+        setShowLoader(false);
+      }, 500);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const savedTheme = localStorage.getItem("theme");
 
   const [theme, setTheme] = useState(
@@ -28,7 +44,6 @@ function App() {
   const [active, setActive] = useState("about");
 
   const isScrollingRef = useRef(false);
-
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
@@ -132,6 +147,20 @@ function App() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (showLoader) {
+  return (
+    <div className={`loading-screen ${fadeOut ? "fade-out" : ""}`}>
+      <div className="loader-inner">
+        <div className="loader-dot"></div>
+        <div className="loader-dot"></div>
+        <div className="loader-dot"></div>
+      </div>
+
+      <h1 className="loader-text">Loading</h1>
+    </div>
+  );
+}
 
   return (
     <div

@@ -1,11 +1,14 @@
 import "../styles/about.css";
 import { useState } from "react";
+import Header from './Header'
 
 export default function About() {
    const [showMore, setShowMore] = useState(false);
 
   return (
     <section className="section-about" id="about">
+      <Header message="Welcome to My Profile" />
+
       <h2>ABOUT</h2>
       <p>
         I’m an aspiring <span className="highlight">Frontend Developer</span>{" "}
