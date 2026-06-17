@@ -1,52 +1,85 @@
-import '../styles/skills.css'
+import "../styles/skills.css";
+import { useEffect, useRef, useState } from "react";
 
 export default function Skills() {
-  const frontend = ["HTML", "CSS", "JavaScript", "React"];
-  const tools = ["Git", "GitHub", "VS Code", "Vite"];
-  const learning = ["Node.js", "Backend Development", "Web Accessibility"];
+  const skillsRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  const skills = [
+  {
+    name: "React",
+    level: 85,
+    fact: "⚛️ Built multiple projects with React.",
+  },
+  {
+    name: "JavaScript",
+    level: 80,
+    fact: "⚡ Enjoy solving problems with JavaScript.",
+  },
+  {
+    name: "HTML",
+    level: 95,
+    fact: "🌐 Strong understanding of semantic HTML.",
+  },
+  {
+    name: "CSS",
+    level: 90,
+    fact: "🎨 Love creating responsive layouts.",
+  },
+];
+
+  // 👇 Detect when section enters viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+
+        if (entry.isIntersecting) {
+          setVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (skillsRef.current) {
+      observer.observe(skillsRef.current);
+    }
+
+    return () => {
+      if (skillsRef.current) {
+        observer.unobserve(skillsRef.current);
+      }
+    };
+  }, []);
 
   return (
-    <section id="skills" className="skills-section">
-      <h2>Skills</h2>
+    <section id="skills" className="skills-section" ref={skillsRef}>
+      <h2>⚡ Skills</h2>
 
       <p className="skills-intro">
-        Over the past year, I’ve been building projects and strengthening my
-        frontend development skills. I enjoy creating responsive user
-        interfaces, learning modern development practices, and continuously
-        improving my understanding of web technologies.
+        I build modern frontend projects using React and JavaScript 🚀
       </p>
 
-      <div className="skill-group">
-        <h3>Frontend Development</h3>
-        <div className="skills-container">
-          {frontend.map((skill) => (
-            <span key={skill} className="skill-badge">
-              {skill}
-            </span>
-          ))}
-        </div>
-      </div>
+      <div className="skills-container">
+        {skills.map((skill) => (
+          <div key={skill.name} className="skill-item">
+            <div className="skill-header">
+              <span>{skill.name}</span>
+              <span>{skill.level}%</span>
+            </div>
 
-      <div className="skill-group">
-        <h3>Tools & Workflow</h3>
-        <div className="skills-container">
-          {tools.map((skill) => (
-            <span key={skill} className="skill-badge">
-              {skill}
-            </span>
-          ))}
-        </div>
-      </div>
+            <div className="progress-bar">
+              <div
+                className="progress-fill"
+                style={{
+                  width: visible ? `${skill.level}%` : "0%",
+                }}
+              ></div>
+            </div>
 
-      <div className="skill-group">
-        <h3>Exploring</h3>
-        <div className="skills-container">
-          {learning.map((skill) => (
-            <span key={skill} className="skill-badge">
-              {skill}
-            </span>
-          ))}
-        </div>
+            <p className="fun-fact">{skill.fact}</p>
+          </div>
+        ))}
       </div>
     </section>
   );

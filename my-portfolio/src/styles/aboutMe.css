@@ -1,0 +1,75 @@
+.about-section {
+  max-width: 700px;
+  padding: 60px 0;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--accent);
+  margin-bottom: 20px;
+}
+
+/* AVATAR CONTAINER */
+.avatar-box {
+  width: 90px;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--card-bg);
+  border: 1px solid rgba(100, 255, 218, 0.15);
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  margin-bottom: 20px;
+}
+
+.avatar-box:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(100, 255, 218, 0.15);
+}
+
+/* EMOJI */
+.avatar {
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.avatar-box:hover .avatar {
+  transform: rotate(10deg);
+}
+
+.about-text {
+  color: var(--secondary-text);
+  line-height: 1.7;
+}
+
+.click-counter {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--accent);
+  font-weight: 500;
+
+  opacity: 0.9;
+  transition: 0.3s ease;
+}
+
+.click-counter:hover {
+  transform: translateX(3px);
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.click-counter {
+  animation: pulse 2s infinite;
+}

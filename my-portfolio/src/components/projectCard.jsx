@@ -1,27 +1,42 @@
+import { useState } from "react";
 import "../styles/projects.css";
 
 export default function ProjectCard({ project }) {
+  const [expanded, setExpanded] = useState(false);
+
   return (
-    <section id="projects">
-      <a href={project.link} target="_blank" rel="noopener noreferrer">
-        <div className="project-card">
-          <img src={project.image} alt={project.name} />
+    <div className="project-item">
+      {/* LEFT IMAGE */}
+      <img src={project.image} alt={project.name} className="project-img" />
 
-          <div className="project-card-content">
-            {project.featured && <span className="featured">Featured</span>}
+      {/* RIGHT CONTENT */}
+      <div className="project-content">
+        <div className="project-title">
+          <a href={project.link} target="_blank" rel="noreferrer">
+            {project.name}
+          </a>
 
-            <h3>{project.name}</h3>
-
-            <p>{project.description}</p>
-
-            <div className="tech-stack">
-              {project.techStack.map((tech) => (
-                <span key={tech}>{tech}</span>
-              ))}
-            </div>
-          </div>
+          {project.featured && <span className="featured">★ Featured</span>}
         </div>
-      </a>
-    </section>
+
+        <p className="project-desc">{project.description}</p>
+
+        <div className="tech-stack">
+          {project.techStack.map((tech) => (
+            <span key={tech}>{tech}</span>
+          ))}
+        </div>
+
+        <button className="details-btn" onClick={() => setExpanded(!expanded)}>
+          {expanded ? "Hide Details" : "View Details"}
+        </button>
+
+        {expanded && (
+          <div className="extra-details">
+            <p>Project built for learning frontend development.</p>
+          </div>
+        )}
+      </div>
+    </div>
   );
 }

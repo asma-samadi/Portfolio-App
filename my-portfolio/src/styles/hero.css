@@ -2,15 +2,18 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  position: relative;
 }
 
 .hero h1 {
-  font-weight: 700;
-  color: var(--primary-text);
+  color: transparent;
+  -webkit-text-stroke: 1px var(--accent);
   font-size: 48px;
   line-height: 50px;
+  font-weight: 700;
   margin-bottom: 10px;
   margin-top: 0;
+  animation: glow 2s ease-in-out infinite alternate;
 }
 
 .hero p {
@@ -21,10 +24,199 @@
   margin-top: 0px;
 }
 
-.hero p span {
+.intro-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+
+.intro-line p {
+  margin: 0;
+  font-weight: 500;
+  color: var(--primary-text);
+  font-size: 18px;
+}
+
+.hero .skill-text {
+  font-size: 1rem;
+  line-height: 20px;
   font-weight: 400;
+  margin-top: -5px;
   color: var(--secondary-text);
-  font-size: 16px;
-  line-height: 24px;
-  margin-top: 40px;
+  margin-bottom: -10px;
+  text-transform: uppercase;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px var(--accent);
+  }
+
+  to {
+    text-shadow:
+      0 0 10px var(--accent),
+      0 0 20px var(--accent);
+  }
+}
+
+.typewriter {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--accent);
+  flex: 1;
+  letter-spacing: 0px;
+  font-family: "JetBrains Mono", monospace;
+  animation: typeGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes typeGlow {
+  from {
+    text-shadow: 0 0 4px var(--accent);
+  }
+
+  to {
+    text-shadow:
+      0 0 8px var(--accent),
+      0 0 12px rgba(100, 255, 218, 0.5);
+  }
+}
+
+@media (max-width: 1080px) {
+  .hero h1 {
+    font-size: 42px;
+    line-height: 46px;
+    padding-top: 20px;
+  }
+
+  .hero p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .intro-line p {
+    font-size: 16px;
+  }
+
+  .hero .skill-text {
+    font-size: 0.95rem;
+  }
+
+  .typewriter {
+    font-size: 16px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 40px;
+    line-height: 44px;
+  }
+
+  .hero p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .intro-line p {
+    font-size: 16px;
+  }
+
+  .hero .skill-text {
+    font-size: 0.95rem;
+  }
+
+  .typewriter {
+    font-size: 16px;
+  }
+}
+
+/* Small tablets */
+@media (max-width: 1000px) {
+  .hero h1 {
+    font-size: 36px;
+    line-height: 42px;
+    margin-top: 20px;
+  }
+
+  .hero p {
+    font-size: 17px;
+    line-height: 25px;
+  }
+
+  .intro-line p {
+    font-size: 16px;
+  }
+
+  .hero .skill-text {
+    font-size: 0.9rem;
+  }
+
+  .typewriter {
+    font-size: 15px;
+  }
+
+  .intro-line {
+    flex-wrap: wrap;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 20px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    line-height: 38px;
+    margin-top: 20px;
+  }
+
+  .hero p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .intro-line {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .intro-line p {
+    font-size: 15px;
+  }
+
+  .hero .skill-text {
+    font-size: 0.85rem;
+  }
+
+  .typewriter {
+    font-size: 14px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .intro-line p {
+    font-size: 13px;
+  }
+
+  .hero .skill-text {
+    font-size: 0.8rem;
+  }
+
+  .typewriter {
+    font-size: 13px;
+  }
 }

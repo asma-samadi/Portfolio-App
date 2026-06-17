@@ -2,10 +2,11 @@
   list-style: none;
   padding: 0;
   margin-top: 50px;
+  margin-bottom: 90px;
 }
 
 .nav-links li {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .nav-links a {
@@ -14,27 +15,36 @@
   gap: 15px;
   text-decoration: none;
   color: var(--secondary-text);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
   transition: all 0.3s ease;
+}
+
+.nav-links a.active {
+  color: var(--accent);
+}
+
+.nav-links a.active::before {
+  width: 80px;
+  background: var(--accent);
 }
 
 .nav-links a::before {
   content: "";
-  width: 30px;
+  width: 50px;
   height: 1px;
   background: var(--secondary-text);
   transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: var(--primary-text);
+  color: var(--accent);
 }
 
 .nav-links a:hover::before {
-  width: 60px;
-  background: var(--primary-text);
+  width: 80px;
+  background: var(--accent);
 }
 
 .nav-icons {
@@ -44,26 +54,84 @@
 }
 
 .nav-icons a {
-  color: var(--secondary-text);
+  color: var(--accent);
   font-size: 30px;
   transition: 0.3s;
+  animation: iconGlow 2s ease-in-out infinite alternate;
+}
+
+.nav-icons a svg {
+  filter: drop-shadow(0 0 6px var(--accent));
+}
+
+@keyframes iconGlow {
+  from {
+    filter: drop-shadow(0 0 1px var(--accent));
+  }
+
+  to {
+    filter: drop-shadow(0 0 2px var(--accent));
+  }
 }
 
 .nav-icons a:hover {
-  color: var(--accent);
+  color: var(--primary-text);
   transform: translateY(-3px);
 }
 
-@media (max-width: 768px) {
+/* All small screens */
+@media (max-width: 1000px) {
+
   .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    margin: 0;
+    padding: 12px 10px;
+
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(100, 255, 218, 0.15);
+
+    z-index: 1000;
+    gap: 10px;
+  }
+
+  .nav-links li {
+    margin: 0;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    gap: 8px;
+  }
+
+  .nav-links a::before {
     display: none;
   }
 
+  .nav-links a.active {
+    background: rgba(100, 255, 218, 0.12);
+  }
+
   .nav-icons {
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 60px;
   }
 
   .nav-icons a {
-    font-size: 25px;
+    font-size: 22px;
   }
 }
