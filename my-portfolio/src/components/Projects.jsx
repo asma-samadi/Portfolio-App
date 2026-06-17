@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import ProjectCard from "./projectCard";
+import ProjectCard from "./ProjectCard";
 import "../styles/projects.css";
 
 import invoiceImg from "../assets/Invoice Flow.PNG";
