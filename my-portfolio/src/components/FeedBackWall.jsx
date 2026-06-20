@@ -53,7 +53,7 @@ export default function FeedbackWall() {
   };
 
   return (
-    <section className="feedback-section" id="feedBackWall">
+    <section className="feedback-section page-transition" id="feedBackWall">
       <h2>💬 Feedback Wall</h2>
 
       {/* FORM */}

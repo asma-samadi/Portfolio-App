@@ -6,7 +6,7 @@ export default function About() {
    const [showMore, setShowMore] = useState(false);
 
   return (
-    <section className="section-about" id="about">
+    <section className="section-about page-transition" id="about">
       <Header message="Welcome to My Profile" />
 
       <h2>ABOUT</h2>

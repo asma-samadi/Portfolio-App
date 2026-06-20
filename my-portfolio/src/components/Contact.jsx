@@ -118,7 +118,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="contact-section">
+    <section id="contact" className="contact-section page-transition">
       <h2>📩 Get In Touch</h2>
 
       <p className="contact-text">

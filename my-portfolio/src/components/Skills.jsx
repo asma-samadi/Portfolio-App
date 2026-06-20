@@ -53,7 +53,7 @@ export default function Skills() {
   }, []);
 
   return (
-    <section id="skills" className="skills-section" ref={skillsRef}>
+    <section id="skills" className="skills-section page-transition" ref={skillsRef}>
       <h2>⚡ Skills</h2>
 
       <p className="skills-intro">

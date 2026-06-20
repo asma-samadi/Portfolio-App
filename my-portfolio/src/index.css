@@ -19,7 +19,7 @@
   --muted-text: #64748b;
   --accent: #0f766e;
   --accent-hover: #115e59;
-  --card-bg: rgba(226, 232, 240, 0.7);
+  --card-bg: rgba(192, 212, 238, 0.7);
   --input-bg: rgba(226, 232, 240, 0.8);
   --badge-bg: rgba(15, 118, 110, 0.1);
   --badge-hover-bg: rgba(15, 118, 110, 0.2);
@@ -71,6 +71,7 @@
 body {
   box-sizing: border-box;
   margin: 0;
+  overflow-x: clip;
 }
 
 .dark,
@@ -130,6 +131,7 @@ html {
 #contact {
   scroll-margin-top: 80px;
   margin-top: auto;
+  cursor: pointer;
 }
 
 
@@ -451,6 +453,22 @@ html {
   to {
     transform: translateY(-8px);
     opacity: 1;
+  }
+}
+
+.page-transition {
+  animation: fadePage 0.4s ease;
+}
+
+@keyframes fadePage {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

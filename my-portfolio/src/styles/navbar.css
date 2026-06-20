@@ -56,6 +56,7 @@
 .nav-icons a {
   color: var(--accent);
   font-size: 30px;
+  cursor: pointer;
   transition: 0.3s;
   animation: iconGlow 2s ease-in-out infinite alternate;
 }

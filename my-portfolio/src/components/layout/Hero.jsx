@@ -1,4 +1,4 @@
-import "../styles/hero.css";
+import "../../styles/hero.css";
 import { Typewriter } from "react-simple-typewriter";
 
 export default function Hero() {
