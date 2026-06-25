@@ -1,80 +1,99 @@
 import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
 import "../../styles/navbar.css";
-import { NavLink } from 'react-router-dom'
 
 export default function Navbar({ active }) {
 
   return (
     <nav>
-      <ul className='nav-links'>
+      <ul className="nav-links">
         <li>
-          <NavLink
-            to="/"
+          <a
+            href="#about"
             className={active === "about" ? "active" : ""}
-            onClick={() =>
+            onClick={(e) => {
+              e.preventDefault();
               document
                 .getElementById("about")
-                .scrollIntoView({ behavior: "smooth" })
-            }
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
           >
             About
-          </NavLink>
+          </a>
         </li>
 
         <li>
-          <NavLink
-            to="/skills"
+          <a
+            href="#skills"
             className={active === "skills" ? "active" : ""}
-            onClick={() =>
+            onClick={(e) => {
+              e.preventDefault();
               document
                 .getElementById("skills")
-                .scrollIntoView({ behavior: "smooth" })
-            }
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
           >
             Skills
-          </NavLink>
+          </a>
         </li>
 
         <li>
-          <NavLink
-            to="/projects"
+          <a
+            href="#projects"
             className={active === "projects" ? "active" : ""}
-            onClick={() =>
+            onClick={(e) => {
+              e.preventDefault();
               document
                 .getElementById("projects")
-                .scrollIntoView({ behavior: "smooth" })
-            }
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
           >
             Projects
-          </NavLink>
+          </a>
         </li>
 
         <li>
-          <NavLink
-            to="/feedBack"
+          <a
+            href="#timeline"
+            className={active === "timeline" ? "active" : ""}
+            onClick={(e) => {
+              e.preventDefault();
+              document
+                .getElementById("timeline")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            Journey
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#feedBack"
             className={active === "feedBack" ? "active" : ""}
-            onClick={() =>
+            onClick={(e) => {
+              e.preventDefault();
               document
                 .getElementById("feedBack")
-                .scrollIntoView({ behavior: "smooth" })
-            }
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
           >
             Feedback
-          </NavLink>
+          </a>
         </li>
 
         <li>
-          <NavLink
-            to="/contact"
+          <a
+            href="#contact"
             className={active === "contact" ? "active" : ""}
-            onClick={() =>
+            onClick={(e) => {
+              e.preventDefault();
               document
                 .getElementById("contact")
-                .scrollIntoView({ behavior: "smooth" })
-            }
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
           >
             Contact
-          </NavLink>
+          </a>
         </li>
       </ul>
 

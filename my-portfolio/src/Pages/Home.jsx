@@ -6,16 +6,15 @@ import Skills from "../components/Skills";
 import Footer from "../components/Footer";
 import FeedbackWall from "../components/FeedBackWall";
 import Layout from "../components/layout/Layout";
+import Timeline from '../components/Timeline'
 
 import "../index.css";
 
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import ScrollReveal from "scrollreveal";
 
 export default function Home() {
   const [active, setActive] = useState("about");
-  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +23,7 @@ export default function Home() {
         "aboutMe",
         "skills",
         "projects",
+        'timeline',
         "feedBack",
         "contact",
       ];
@@ -49,9 +49,8 @@ export default function Home() {
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [setActive]);
+  }, []);
 
   useEffect(() => {
     const sr = ScrollReveal({
@@ -66,67 +65,44 @@ export default function Home() {
     sr.reveal("#aboutMe", { origin: "bottom" });
     sr.reveal("#skills", { origin: "right" });
     sr.reveal("#projects", { origin: "bottom" });
+    sr.reveal("#timeline", { origin: "bottom" });
     sr.reveal("#feedBack", { origin: "bottom" });
     sr.reveal("#contact", { origin: "bottom" });
 
     return () => sr.destroy?.();
   }, []);
 
-  useEffect(() => {
-    const path = location.pathname.replace("/", "");
-
-    if (!path) return;
-
-    const section = document.getElementById(path);
-
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [location]);
-
-  useEffect(() => {
-    const path = location.pathname.replace("/", "");
-
-    if (path) {
-      const el = document.getElementById(path);
-
-      if (el) {
-        setTimeout(() => {
-          el.scrollIntoView({ behavior: "smooth" });
-        }, 100);
-      }
-    }
-  }, [location]);
-
   return (
-    <>
-      <Layout active={active} setActive={setActive}>
-        <section id="about">
-          <About />
-        </section>
+    <Layout active={active} setActive={setActive}>
+      <section id="about">
+        <About />
+      </section>
 
-        <section id="aboutMe">
-          <AboutMe />
-        </section>
+      <section id="aboutMe">
+        <AboutMe />
+      </section>
 
-        <section id="skills">
-          <Skills />
-        </section>
+      <section id="skills">
+        <Skills />
+      </section>
 
-        <section id="projects">
-          <Projects />
-        </section>
+      <section id="projects">
+        <Projects />
+      </section>
 
-        <section id="feedBack">
-          <FeedbackWall />
-        </section>
+      <section id="timeline">
+        <Timeline />
+      </section>
 
-        <section id="contact">
-          <Contact />
-        </section>
+      <section id="feedBack">
+        <FeedbackWall />
+      </section>
 
-        <Footer />
-      </Layout>
-    </>
+      <section id="contact">
+        <Contact />
+      </section>
+
+      <Footer />
+    </Layout>
   );
 }

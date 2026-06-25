@@ -8,8 +8,7 @@ export default function About() {
   return (
     <section className="section-about page-transition" id="about">
       <Header message="Welcome to My Profile" />
-
-      <h2>ABOUT</h2>
+      <h2>ABOUT</h2>   
       <p>
         I’m an aspiring <span className="highlight">Frontend Developer</span>{" "}
         focused on building responsive, accessible, and user-centered web

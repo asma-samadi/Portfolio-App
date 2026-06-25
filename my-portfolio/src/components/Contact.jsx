@@ -1,6 +1,7 @@
 import "../styles/contact.css";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [formData, setFormData] = useState(() => {
@@ -82,7 +83,7 @@ export default function Contact() {
     return newErrors;
   };
 
-  // Submit form
+  // 🚀 EMAILJS ADDED HERE (ONLY CHANGE)
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -94,27 +95,45 @@ export default function Contact() {
     }
 
     setErrors({});
-    setSuccess(true);
 
-    // store message
-    const submitted = JSON.parse(localStorage.getItem("submitted") || "[]");
-    submitted.push(formData);
-    localStorage.setItem("submitted", JSON.stringify(submitted));
+    emailjs
+      .send(
+        "service_5p5ituc",
+        "template_0hd1frk",
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        "UKXR8Fz-i1rTXltvi",
+      )
+      .then(() => {
+        setSuccess(true);
 
-    // reset form
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
+        // store message
+        const submitted = JSON.parse(localStorage.getItem("submitted") || "[]");
+        submitted.push(formData);
+        localStorage.setItem("submitted", JSON.stringify(submitted));
 
-    localStorage.removeItem("contactForm");
+        // reset form
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
 
-    // close modal
-    setTimeout(() => {
-      setSuccess(false);
-    }, 3000);
+        localStorage.removeItem("contactForm");
+
+        // close modal
+        setTimeout(() => {
+          setSuccess(false);
+        }, 3000);
+      })
+      .catch((error) => {
+        console.log("EMAIL FAILED:", error);
+      });
   };
 
   return (

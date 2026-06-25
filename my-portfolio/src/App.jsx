@@ -1,6 +1,12 @@
 import Home from "./Pages/Home";
-import NotFound from './Pages/NotFound';
-import ProjectDetails from './Pages/ProjectDetails'
+import NotFound from "./Pages/NotFound";
+import ProjectDetails from "./Pages/ProjectDetails";
+import AboutPage from "./Pages/AboutPage";
+import SkillsPage from "./Pages/SkillsPage";
+import ProjectsPages from "./Pages/ProjectsPages";
+import FeedBackWallPages from "./Pages/FeedBackWallPages";
+import ContactPages from "./Pages/ContactPages";
+import TimelinePages from './Pages/TimelinePages'
 
 import "./index.css";
 
@@ -18,7 +24,11 @@ function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [showButton, setShowButton] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
-  
+
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "dark";
+  });
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setFadeOut(true);
@@ -63,10 +73,6 @@ function App() {
     });
   };
 
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("theme") || "dark";
-  });
-
   useEffect(() => {
     localStorage.setItem("theme", theme);
   }, [theme]);
@@ -83,7 +89,6 @@ function App() {
       </div>
     );
   }
-
 
   return (
     <div
@@ -120,19 +125,18 @@ function App() {
         </button>
       )}
 
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<Home />} />
-            <Route path="/skills" element={<Home />} />
-            <Route path="/projects" element={<Home />} />
-            <Route path="/feedback" element={<Home />} />
-            <Route path="/contact" element={<Home />} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/skills" element={<SkillsPage />} />
+        <Route path="/projects" element={<ProjectsPages />} />
+        <Route path='/timeline' element={<TimelinePages />} />
+        <Route path="/feedback" element={<FeedBackWallPages />} />
+        <Route path="/contact" element={<ContactPages />} />
 
-            <Route path="/projects/:id" element={<ProjectDetails />} />
-            
-            <Route path="*" element={<NotFound />} />
-        </Routes>
-
+        <Route path="/projects/:id" element={<ProjectDetails />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 }

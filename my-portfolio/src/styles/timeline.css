@@ -1,0 +1,148 @@
+.timeline-section {
+  padding: 0;
+  max-width: 700px;
+  padding-bottom: 50px;
+}
+
+.timeline-title {
+  font-size: 1.8rem;
+  color: transparent;
+  text-align: center;
+  -webkit-text-stroke: 1px var(--accent);
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 12px rgba(100, 255, 218, 0.25);
+}
+
+/* MAIN LINE */
+.timeline {
+  position: relative;
+}
+
+/* glowing vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  width: 3px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--accent),
+    transparent
+  );
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: glowLine 3s infinite alternate;
+}
+
+/* ITEM BASE */
+.timeline-item {
+  width: 50%;
+  padding: 30px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+/* LEFT */
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+/* RIGHT */
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+/* CARD */
+.timeline-content {
+  background: var(--card-bg);
+  padding: 20px;
+  margin-right: 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(100, 255, 218, 0.15);
+  backdrop-filter: blur(12px);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+/* hover animation */
+.timeline-content:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(100, 255, 218, 0.25);
+}
+
+/* YEAR BADGE */
+.timeline-year {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--badge-bg);
+  color: var(--accent);
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+/* DOT */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 35px;
+  width: 14px;
+  height: 14px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--accent);
+  transition: 0.3s ease;
+}
+
+.timeline-item.left::before {
+  right: -7px;
+}
+
+.timeline-item.right::before {
+  left: -7px;
+}
+
+/* ===== ANIMATION ACTIVE (scroll reveal effect) ===== */
+.timeline-item.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* glow animation */
+@keyframes glowLine {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 10px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 40px;
+    text-align: left !important;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
+  }
+
+  .timeline-item::before {
+    left: 0;
+  }
+}

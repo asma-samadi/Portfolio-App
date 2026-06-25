@@ -13,50 +13,44 @@
 }
 
 .light {
-  --bg-color: #ECEBF2;
-  --primary-text: #1e293b;
-  --secondary-text: #475569;
-  --muted-text: #64748b;
+  --bg-color: #dfdada;
+
+  --primary-text: #1f2937;
+  --secondary-text: #4b5563;
+  --muted-text: #6b7280;
+
   --accent: #0f766e;
-  --accent-hover: #115e59;
-  --card-bg: rgba(192, 212, 238, 0.7);
-  --input-bg: rgba(226, 232, 240, 0.8);
-  --badge-bg: rgba(15, 118, 110, 0.1);
+  --accent-hover: #0d5f59;
+
+  --card-bg: rgba(255, 255, 255, 0.65);
+  --input-bg: rgba(255, 255, 255, 0.8);
+
+  --badge-bg: rgba(15, 118, 110, 0.12);
   --badge-hover-bg: rgba(15, 118, 110, 0.2);
 
-  --link-text: #334155;
+  --link-text: #374151;
 }
 
 .forest {
-  /* 🌑 Deep jungle background */
   --bg-color: #053021;
 
-  /* 🌿 Main text (strong green-white mix, not bright mint) */
   --primary-text: #cfe8d6;
 
-  /* 🌱 Secondary text (muted forest fog) */
   --secondary-text: #7fa68f;
 
-  /* 🌲 Muted text (deep moss) */
   --muted-text: #4f6f5e;
 
-  /* 💚 Main accent (forest green) */
   --accent: #0b6b3a;
 
-  /* 🌿 Hover accent (slightly brighter forest leaf) */
   --accent-hover: #118a4a;
 
-  /* 🪵 Card background (dark green glass) */
   --card-bg: rgba(11, 107, 58, 0.12);
 
-  /* 🌲 Input background */
   --input-bg: rgba(11, 107, 58, 0.18);
 
-  /* 🍃 Badge background */
   --badge-bg: rgba(11, 107, 58, 0.22);
   --badge-hover-bg: rgba(11, 107, 58, 0.3);
 
-  /* 🌿 Links */
   --link-text: #2f9e5a;
 }
 
@@ -470,6 +464,12 @@ html {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 @media (max-width: 1300px) {

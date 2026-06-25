@@ -168,6 +168,145 @@
   }
 }
 
+/* REACTION BUTTONS */
+.reaction-bar {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.reaction-bar button {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(100,255,218,0.2);
+  background: rgba(255,255,255,0.05);
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.25s ease;
+}
+
+.reaction-bar button:hover {
+  transform: translateY(-3px) scale(1.1);
+  border-color: var(--accent);
+  background: rgba(100,255,218,0.12);
+}
+
+
+/* REACTION DISPLAY */
+.reactions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.reaction-item {
+  background: rgba(255,255,255,0.08);
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+
+/* REPLIES CONTAINER */
+.replies {
+  margin-top: 20px;
+  padding-left: 15px;
+  border-left: 2px solid rgba(100,255,218,0.3);
+}
+
+
+/* SINGLE REPLY */
+.reply-box {
+  background: rgba(30,41,59,0.35);
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  transition: 0.3s ease;
+}
+
+.reply-box:hover {
+  transform: translateX(5px);
+  border-left: 3px solid var(--accent);
+}
+
+.reply-box strong {
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.reply-box p {
+  margin: 6px 0 0;
+  color: var(--secondary-text);
+  font-size: 14px;
+}
+
+
+/* REPLY INPUT AREA */
+.reply-section {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+
+.reply-section input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(100,255,218,0.15);
+  background: rgba(30,41,59,0.5);
+  color: var(--primary-text);
+  outline: none;
+  transition: 0.3s ease;
+}
+
+
+.reply-section input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(100,255,218,0.2);
+}
+
+
+/* REPLY BUTTON */
+.reply-section button {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(100,255,218,0.3);
+  background: rgba(100,255,218,0.1);
+  color: var(--accent);
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+
+.reply-section button:hover {
+  background: rgba(100,255,218,0.2);
+  transform: translateY(-2px);
+}
+
+
+/* MOBILE */
+@media(max-width:600px){
+
+  .reply-section {
+    flex-direction: column;
+  }
+
+  .reply-section button {
+    width: 100%;
+  }
+
+  .reaction-bar {
+    flex-wrap: wrap;
+  }
+
+}
+
 /* Mobile */
 @media (max-width: 768px) {
   .about-section {
