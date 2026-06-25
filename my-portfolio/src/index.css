@@ -65,7 +65,12 @@
 body {
   box-sizing: border-box;
   margin: 0;
-  overflow-x: clip;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .dark,
@@ -603,25 +608,62 @@ html {
 /* Small mobile */
 @media (max-width: 480px) {
   .layout {
-    padding: 8px 12px;
+    padding: 15px;
   }
 
+  .left {
+    padding-top: 60px;
+  }
+
+  .right {
+    margin-top: 20px;
+    padding: 10px 0;
+  }
+
+  /* Theme buttons */
   .theme-switcher {
+    position: fixed;
+    top: auto;
+    bottom: 15px;
+    right: 15px;
+
     flex-direction: row;
-    top: 10px;
-    right: 10px;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    background: rgba(15, 23, 42, 0.9);
+    padding: 6px;
+    border-radius: 10px;
+
+    z-index: 9999;
   }
 
   .theme-btn {
     writing-mode: horizontal-tb;
-    border-bottom: none;
-    border-right: 0.5px solid;
+    text-orientation: initial;
+
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+
+    border: none;
     padding: 6px 8px;
-    font-size: 0.8rem;
   }
 
+  /* Back to top */
   .back-top {
-    font-size: 0.75rem;
-    letter-spacing: 2px;
+    right: 15px;
+    bottom: 80px;
+
+    writing-mode: horizontal-tb;
+    text-orientation: initial;
+
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+
+    padding: 6px 10px;
+
+    background: rgba(15, 23, 42, 0.9);
+    border-radius: 8px;
   }
 }
+
