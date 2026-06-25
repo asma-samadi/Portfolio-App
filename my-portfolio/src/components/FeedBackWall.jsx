@@ -3,11 +3,31 @@ import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import "../styles/feedback.css";
 
+import {
+  collection,
+  addDoc,
+  onSnapshot,
+  deleteDoc,
+  doc,
+} from "firebase/firestore";
+
+import { db } from "../data/firebase";
+
 export default function FeedbackWall() {
-  const [feedbacks, setFeedbacks] = useState(() => {
-    const saved = localStorage.getItem("feedbacks");
-    return saved ? JSON.parse(saved) : [];
-  });
+  const [feedbacks, setFeedbacks] = useState([]);
+
+  useEffect(() => {
+    const unsub = onSnapshot(collection(db, "feedbacks"), (snapshot) => {
+      const data = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+
+      setFeedbacks(data);
+    });
+
+    return () => unsub();
+  }, []);
 
   const [currentUser] = useState("Asma");
 
@@ -23,8 +43,8 @@ export default function FeedbackWall() {
   const [sortType, setSortType] = useState("newest");
 
   useEffect(() => {
-    localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
-  }, [feedbacks]);
+  localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
+}, [feedbacks]);
 
   const reactionTypes = ["❤️", "😮", "🔥", "😊", "👍", "👌"];
 
@@ -35,7 +55,7 @@ export default function FeedbackWall() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!form.name || !form.comment) return;
@@ -48,7 +68,7 @@ export default function FeedbackWall() {
       replies: [],
     };
 
-    setFeedbacks([newFeedback, ...feedbacks]);
+   await addDoc(collection(db, "feedbacks"), newFeedback);
 
     // EMAILJS SEND FEEDBACK TO EMAIL
 
@@ -135,9 +155,9 @@ export default function FeedbackWall() {
     );
   };
 
-  const deleteFeedback = (id) => {
-    setFeedbacks((prev) => prev.filter((item) => item.id !== id));
-  };
+  const deleteFeedback = async (id) => {
+  await deleteDoc(doc(db, "feedbacks", id));
+};
 
   const deleteReply = (feedbackId, replyId) => {
     setFeedbacks((prev) =>
