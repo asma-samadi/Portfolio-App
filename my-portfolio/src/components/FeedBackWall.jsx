@@ -56,50 +56,47 @@ export default function FeedbackWall() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (!form.name || !form.comment) return;
+  if (!form.name || !form.comment) return;
 
-    const newFeedback = {
-      ...form,
-      id: Date.now(),
-      owner: form.name,
-      reactions: [],
-      replies: [],
-    };
+  const newFeedback = {
+    ...form,
+    id: Date.now(),
+    owner: form.name,
+    reactions: [],
+    replies: [],
+  };
 
-   await addDoc(collection(db, "feedbacks"), newFeedback);
+  try {
+    await addDoc(collection(db, "feedbacks"), newFeedback);
 
-    // EMAILJS SEND FEEDBACK TO EMAIL
+    console.log("Firebase success");
 
-    emailjs
-      .send(
-        "service_5p5ituc",
-        "template_45v960a",
-        {
-          name: form.name,
+    await emailjs.send(
+      "service_5p5ituc",
+      "template_45v960a",
+      {
+        name: form.name,
+        rating: "⭐".repeat(Number(form.rating)),
+        stars: `${form.rating}/5`,
+        message: form.comment,
+      },
+      "UKXR8Fz-i1rTXltvi"
+    );
 
-          rating: "⭐".repeat(Number(form.rating)),
-
-          stars: `${form.rating}/5`,
-
-          message: form.comment,
-        },
-        "UKXR8Fz-i1rTXltvi",
-      )
-      .then(() => {
-        console.log("Feedback sent");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    console.log("Email success");
 
     setForm({
       name: "",
       rating: 5,
       comment: "",
     });
-  };
+
+  } catch (error) {
+    console.error("ERROR:", error);
+  }
+};
 
   const handleReplyChange = (id, value) => {
     setReplyText({
