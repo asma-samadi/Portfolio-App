@@ -602,8 +602,16 @@ html {
 
 /* Small mobile */
 @media (max-width: 480px) {
+  html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
   .layout {
     padding: 15px;
+    margin-right: 25px;
+    margin-left: 25px;
   }
 
   .left {
@@ -615,50 +623,19 @@ html {
     padding: 10px 0;
   }
 
-  /* Theme buttons */
-  .theme-switcher {
-    position: fixed;
-    top: auto;
-    bottom: 15px;
-    right: 15px;
-
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 5px;
-
-    background: rgba(15, 23, 42, 0.9);
-    padding: 6px;
-    border-radius: 10px;
-
-    z-index: 9999;
-  }
-
   .theme-btn {
-    writing-mode: horizontal-tb;
-    text-orientation: initial;
+    writing-mode: vertical-lr;
 
     font-size: 0.75rem;
     letter-spacing: 1px;
-
-    border: none;
     padding: 6px 8px;
   }
 
   /* Back to top */
   .back-top {
-    right: 15px;
-    bottom: 80px;
-
-    writing-mode: horizontal-tb;
-    text-orientation: initial;
-
     font-size: 0.8rem;
     letter-spacing: 1px;
-
     padding: 6px 10px;
-
-    background: rgba(15, 23, 42, 0.9);
-    border-radius: 8px;
   }
 }
 
