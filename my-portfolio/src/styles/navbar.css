@@ -146,6 +146,10 @@
 
 @media (max-width:480px) {
   .nav-links a {
-    font-size: 8px;
+    font-size: 5px;
+  }
+
+  .nav-links {
+    gap: 0px;
   }
 }
