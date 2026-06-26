@@ -65,12 +65,7 @@
 body {
   box-sizing: border-box;
   margin: 0;
-}
-
-html,
-body {
-  width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .dark,
