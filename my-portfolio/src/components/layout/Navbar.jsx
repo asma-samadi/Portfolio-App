@@ -104,7 +104,7 @@ export default function Navbar({ active }) {
         <a href="https://github.com/asma-samadi">
           <FaGithub />
         </a>
-        <a href="https://linkedin.com">
+        <a href="https://www.linkedin.com/in/asma-samadi-811711382/">
           <FaLinkedin />
         </a>
       </div>
