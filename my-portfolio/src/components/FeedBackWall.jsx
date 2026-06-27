@@ -61,11 +61,13 @@ export default function FeedbackWall() {
   if (!form.name || !form.comment) return;
 
   const newFeedback = {
-    ...form,
-    id: Date.now(),
+    name: form.name,
+    rating: Number(form.rating),
+    comment: form.comment,
     owner: form.name,
     reactions: [],
     replies: [],
+    time: Date.now(), 
   };
 
   try {
@@ -97,7 +99,7 @@ export default function FeedbackWall() {
     console.error("ERROR:", error);
   }
 };
-
+    
   const handleReplyChange = (id, value) => {
     setReplyText({
       ...replyText,
@@ -145,7 +147,7 @@ export default function FeedbackWall() {
           ? {
               ...item,
 
-              reactions: [...item.reactions, emoji],
+              reactions: [...(item.reactions || []), emoji],
             }
           : item,
       ),
@@ -172,6 +174,10 @@ export default function FeedbackWall() {
 
   const sortedFeedbacks = () => {
     const data = [...feedbacks];
+
+    if (sortType === "newest") {
+      return [...data].sort((a, b) => b.time - a.time);
+    }
 
     if (sortType === "highest") {
       return data.sort((a, b) => b.rating - a.rating);
@@ -303,7 +309,7 @@ export default function FeedbackWall() {
               {/* REPLIES */}
 
               <div className="replies">
-                {item.replies.map((reply) => (
+                {(item.replies || []).map((reply) => (
                   <div key={reply.id} className="reply-box">
                     <strong>🧑 {reply.name}</strong>
 
