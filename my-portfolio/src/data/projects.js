@@ -1,14 +1,15 @@
 import invoiceImg from "../assets/Invoice Flow.PNG";
 import climateImg from "../assets/Climate Guide.PNG";
 import SchoolPortalImg from "../assets/School Portal.PNG";
-import travelGenieImg from "../assets/Travel Genie.PNG";
 import pollyGlotImg from "../assets/PollyGlot.PNG";
+import arianaSmartImg from '../assets/arianaSmartImg.JPG'
+import travelgenie2 from '../assets/Travel Genie 2.JPG'
 
 const allProjects = [
   {
     id: 1,
     name: "TravelGenie",
-    image: travelGenieImg,
+    image: travelgenie2,
     description:
       "An AI-powered travel planning application that helps users plan trips, manage budgets, organize packing lists, and create personalized travel itineraries.",
     link: "https://travel-genie-kamair-orpin.vercel.app/",
@@ -18,6 +19,7 @@ const allProjects = [
     progress: 100,
     codeLink: "https://github.com/asma-samadi",
   },
+
   {
     id: 2,
     name: "Climate Guide",
@@ -46,6 +48,19 @@ const allProjects = [
   },
   {
     id: 4,
+    name: "Ariana Smart",
+    image: arianaSmartImg,
+    description:
+      "An AI-powered airline management and passenger platform inspired by Ariana Afghan Airlines, featuring flight booking requests, trip planning, eTickets, and an AI assistant.",
+    link: "https://ariana-smart.vercel.app/",
+    techStack: ["React", "JavaScript", "Supabase", "Node.js", "AI"],
+    featured: true,
+    status: "Live",
+    progress: 100,
+    codeLink: "https://github.com/asma-samadi/ariana-smart-stage8-part1-pdf",
+  },
+  {
+    id: 5,
     name: "School Portal",
     image: SchoolPortalImg,
     description:
@@ -58,7 +73,7 @@ const allProjects = [
     codeLink: "https://github.com/asma-samadi/school-portal",
   },
   {
-    id: 5,
+    id: 6,
     name: "PollyGlot",
     image: pollyGlotImg,
     description:
