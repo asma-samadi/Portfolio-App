@@ -11,7 +11,7 @@ const allProjects = [
     image: travelGenieImg,
     description:
       "An AI-powered travel planning application that helps users plan trips, manage budgets, organize packing lists, and create personalized travel itineraries.",
-    link: "https://travel-genie-kappa.vercel.app/",
+    link: "https://travel-genie-kamair-orpin.vercel.app/",
     techStack: ["React", "JavaScript", "Tailwind CSS", "Vite"],
     featured: true,
     status: "Live",
