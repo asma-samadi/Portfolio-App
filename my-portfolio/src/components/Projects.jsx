@@ -45,7 +45,7 @@ text: messages[Math.floor(Math.random() * messages.length)],
 
 return () => clearInterval(interval);
 
-}, []);
+},);
 
 return ( 
 <section className="projects-section page-transition" id="projects"> 
